@@ -34,8 +34,14 @@ function getBill()
       data: {pldtNum:$("#PLDTaccountnumber").val()},
       dataType: 'json',
 	  async: true,
-      success: function (res) {					
-				$("#pldt-acc-display").val("hey");
+      success: function (res) {
+      			
+      			accountnumdisplay = ' <h3 id="pldt-acc-display" class="panel-title">PLDT Account Number: ';
+				accountnumdisplay += res[0][0];
+				accountnumdisplay += '</h3>';	
+				$("#pldtnum").html(accountnumdisplay);		
+				$("#current-bill").html("Bill: " + res[0][1]);
+				
 				
             }
     });

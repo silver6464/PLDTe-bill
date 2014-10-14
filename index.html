@@ -44,6 +44,9 @@
 
 											<label class="control-label" for="BANKaccountnumber">Bank Account Number:</label>
 											<input name="BANKaccountnumber" id="BANKaccountnumber" value="" type="text" class="form-control" placeholder="Bank Account Number">
+
+											<label class="control-label" for="amount-input">Amount:</label>
+											<input name="amount-input" id="amount-input" value="" type="text" class="form-control" placeholder="Amount to pay">
 										</div> <br>
 										
 									</div> <br> 
@@ -51,16 +54,16 @@
 								</form>
 							</div>
 							<div class="tab-pane fade" id="bill-page"> <br> <br> 
-								<form class="center form" id="form-signup" method="post" action="javascript: getbill2();">	
+								<form class="center form" id="form-signup" method="post" action="javascript: paybill();">	
 									<div class="control-group">
 										<div class="panel panel-info">
-								            <div class="panel-heading">
-								              <h3 class="panel-title">Account Number: 
-								              <div id="pldt-acc-display">12345</div>
-								              </h3>
+								            <div id="pldtnum" class="panel-heading">
+								              
+								            <!--<h3 id="pldt-acc-display" class="panel-title">Account Number: </h3>-->
+								              
 								            </div>
 								            <div class="panel-body">
-								              <label id="current-bill"> Bill: P3,400</label>
+								              <label id="current-bill"> </label>
 								            </div>
 								          </div>
 										
