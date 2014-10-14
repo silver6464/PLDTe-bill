@@ -3,9 +3,9 @@ var siteloc = "http://localhost/PLDT";
 var scriptloc = "/scripts/";
 
 $(document).ready(function () {
-	$("#bill-page").attr("class","tab-pane fade in active");
-	$("#inputpage").attr("class","tab-pane fade");	
-	$("#pldt-acc-display").val("hey");
+	
+	document.getElementById("#pldt-acc-display").innertext = "Paragraph changed!";
+	//$("#pldt-acc-display").attr("innerhtml","asds");
 	$('#form-input').validate({
         rules: {
             PLDTaccountnumber: {                
@@ -41,4 +41,18 @@ function getBill()
     });
 	$("#bill-page").attr("class","tab-pane fade in active");
 	$("#inputpage").attr("class","tab-pane fade");	
+}
+
+function paybill()
+{
+	$.ajax({
+      url: siteloc + scriptloc + "paybill.py",
+      data: {accountno:$("#BANKaccountnumber").val(),pldtacct:$("#PLDTaccountnumber").val(),amount:$("#amount-input").val()},
+      dataType: 'json',
+	  async: true,
+      success: function (res) {					
+				$("#pldt-acc-display").val("hey");
+				
+            }
+    });
 }
